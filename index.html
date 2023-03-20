@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Battery indicator</title>
+   <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+   <div class="section">
+      <div class="card">
+         <div class="batteryShape">
+            <div class="batteryBorder">
+               <div class="percentage">
+
+               </div>
+            </div>
+            <div class="percent"></div>
+            <p>Time remaining in battery dead (clear information is not output when charging):</p>
+            <span id="dischargeTime"></span>
+            <p class="isCharging"></p>
+         </div>
+      </div>
+   </div>
+
+   <script src="javascript/app.js"></script>
+</body>
+
+</html>

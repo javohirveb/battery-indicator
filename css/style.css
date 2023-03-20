@@ -1,0 +1,206 @@
+@import url(https://fonts.googleapis.com/css2?family=Courier+Prime:wght@100;200;300;400;500;600;700&display=swap);
+
+body {
+   background: linear-gradient(to right, #1faaff, #12d8fa, #a6ffca);
+   overflow-y: hidden;
+   overflow-x: hidden;
+}
+
+html {
+   overflow-y: hidden;
+   overflow-x: hidden;
+}
+
+@keyframes charging {
+   50% {
+      opacity: 0.1;
+   }
+
+   100% {
+      opacity: 1;
+   }
+}
+
+.section::before {
+   content: '';
+   background: linear-gradient(to right bottom, rgba(255, 255, 255, .8), rgba(255, 255, 255, .3));
+   width: 400px;
+   height: 400px;
+   position: absolute;
+   bottom: 65%;
+   left: 55%;
+   border-radius: 50%;
+   z-index: -1;
+}
+
+.section::after {
+   content: '';
+   background: linear-gradient(to right bottom, rgba(255, 255, 255, .8), rgba(255, 255, 255, .3));
+   width: 300px;
+   height: 300px;
+   position: absolute;
+   bottom: -6%;
+   left: 25%;
+   border-radius: 50%;
+   z-index: -1;
+}
+
+.card {
+   width: 350px;
+   height: 450px;
+   background-color: #f3f3f3b5;
+   backdrop-filter: blur(7px);
+   border-radius: 20px;
+   margin: 5% auto;
+}
+
+.batteryShape {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   min-height: 450px;
+   flex-direction: column;
+}
+
+.batteryShape p {
+   font-family: 'Courier Prime', monospace;
+   font-size: 16px;
+   font-weight: 600;
+   text-align: center;
+}
+
+#dischargeTime {
+   font-family: 'Courier Prime', monospace;
+   font-size: 20px;
+   font-weight: 700;
+}
+
+.batteryBorder {
+   border: 3px solid black;
+   padding-right: 4px;
+   width: 180px;
+   height: 80px;
+   border-radius: 10px;
+   position: relative;
+   display: inline;
+}
+
+.batteryBorder::before {
+   content: '';
+   position: absolute;
+   right: -10px;
+   width: 2px;
+   height: 30px;
+   transform: translateY(-50%);
+   top: 50%;
+   border: 4px solid rgb(0, 0, 0);
+   border-top-right-radius: 4px;
+   border-bottom-right-radius: 4px;
+}
+
+.percentage {
+   position: absolute;
+   left: 0;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   border-radius: 7px;
+}
+
+.percent {
+   font-family: 'Courier Prime', monospace;
+   font-size: 25px;
+   margin: 10px;
+}
+
+.isCharging {
+   margin: 40px 0 0;
+   font-size: 25px;
+   font-family: 'Courier Prime', monospace;
+   font-weight: 700;
+   animation: charging 2s ease-in-out infinite;
+}
+
+@media screen and (max-width: 768px) {
+   .card {
+      width: 550px;
+      height: 550px;
+      margin: 25px auto;
+   }
+
+   .section::before {
+      position: absolute;
+      bottom: 70%;
+      left: 0;
+      width: 400px;
+      height: 400px;
+   }
+
+   .section::after {
+      position: absolute;
+      bottom: 10%;
+      left: 55%;
+      width: 300px;
+      height: 300px;
+   }
+
+   .isCharging {
+      font-size: 20px;
+   }
+}
+
+@media screen and (max-width: 501px) {
+   .card {
+      width: 300px;
+      height: 450px;
+      margin: 25px auto;
+   }
+
+   .section::before {
+      position: absolute;
+      bottom: 70%;
+      left: -30%;
+      width: 300px;
+      height: 300px;
+   }
+
+   .section::after {
+      position: absolute;
+      bottom: 5%;
+      left: 35%;
+      width: 230px;
+      height: 230px;
+   }
+
+   .isCharging {
+      font-size: 20px;
+   }
+}
+
+@media screen and (max-width: 370px) {
+   .card {
+      width: 300px;
+      height: 450px;
+      margin: 25px auto;
+   }
+
+   .section::before {
+      position: absolute;
+      bottom: 70%;
+      left: -30%;
+      word-wrap: 300px;
+      height: 300px;
+   }
+
+   .section::after {
+      position: absolute;
+      bottom: 5%;
+      left: 30%;
+      width: 200px;
+      height: 200px;
+   }
+
+   .isCharging {
+      font-size: 20px;
+   }
+}
